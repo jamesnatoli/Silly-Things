@@ -1,0 +1,28 @@
+// Do calculations for F20 EP2 Exam 3
+#include <cmath>
+#include <iostream>
+
+int main() {
+  float B0 = 0, area = 0;
+  while (1) {
+    std::cout << "******** NEW CALCULATION ********" << std::endl;
+    // Get values
+    std::cout << "What is B0 (micro Tesla)" << std::endl;
+    std::cin >> B0;
+    std::cout << "What is area? (square meters)" << std::endl;
+    std::cin >> area;
+
+    // Constants
+    float c = 3 * pow(10, 8);;
+    float mu0 = 1.256 * pow( 10, -6);
+
+    // Shift to SI
+    B0 = B0 / 1000000;
+
+    float P = 0;
+    P = area*(0.5)*c*B0*B0/mu0;
+    std::cout << "Part (4): Power =  " << P << " Watts\n" << std::endl;
+  }
+  
+  return 0;
+}

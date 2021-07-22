@@ -1,0 +1,11 @@
+WELCOME TO CHESS
+
+INSTRUCTIONS:
+
+1. Black squares are denoted by a "0"
+
+2. White squares are denoted by a o
+
+3. Input moves in format of piece, position,"to" position after move
+
+4. Example is "Bc1 to a3" or "Qf3 to f6"

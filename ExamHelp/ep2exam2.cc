@@ -1,0 +1,51 @@
+// Do calculations for F20 EP2 Exam 1
+#include <cmath>
+#include <iostream>
+
+int main() {
+  float q1 = 0, q2 = 0, q3 = 0, lena = 0, lenb = 0;
+  while (1) {
+    std::cout << "******** NEW CALCULATION ********" << std::endl;
+    std::cout << "********    Part One     ********" << std::endl;
+    // Get values
+    std::cout << "What is charge 1? (nC)" << std::endl;
+    std::cin >> q1;
+    std::cout << "What is charge 2? (nC)" << std::endl;
+    std::cin >> q2;
+    std::cout << "What is charge 3? (nC)" << std::endl;
+    std::cin >> q3;
+    std::cout << "What is length a? (cm)" << std::endl;
+    std::cin >> lena;
+    std::cout << "What is length b? (cm)" << std::endl;
+    std::cin >> lenb;
+
+    // Constants
+    float fpi = 4 * 3.14159;
+    float ep0 = 8.854 * pow( 10, -12);
+
+    float w1 = 0, w2 = 0, w3 = 0, wtot = 0;
+    w1 = q1*q2/lena;
+    w2 = q2*q3/lenb;
+    w3 = q1*q3/(pow( pow(lena,2) + pow(lenb,2), 0.5));
+    wtot = (w1 + w2 + w3)/(fpi*ep0);
+    std::cout << "\nTotal Work = " << wtot << " Joules \n" << std::endl;
+
+    float R1 = 0, R2 = 0, Q1 = 0;
+    std::cout << "********    Part Two     ********" << std::endl;
+    std::cout << "What is Radius 1 (cm)" << std::endl;
+    std::cin >> R1;
+    std::cout << "What is Radius 1 (cm)" << std::endl;
+    std::cin >> R2;
+    std::cout << "What is Charge 1 (uC)" << std::endl;
+    std::cin >> Q1;
+
+    float s1 = 0, s2 = 0;
+    s1 = Q1*R1/(R1 + R2);
+    s2 = Q1*R2/(R1 + R2);
+    std::cout << "Sum Charges = " << (s1 + s2) << " and Q1 = " << Q1 << std::endl;
+    std::cout << "Charge Large = " << s1 << " C \n"<< std::endl;
+    std::cout << "Charge Small = " << s2 << " C \n"<< std::endl;
+  }
+  
+  return 0;
+}

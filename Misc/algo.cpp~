@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+#include <set>
+#include <stdlib.h>
+#include <math.h>
+
+#define N 16
+
+int rand();
+
+int main() {
+  int vals[N] = {0};
+  for (unsigned int i = 0; i < N; i++) {
+    vals[i] = rand() % 50;
+    std::cout << vals[i] << " ";
+  }
+  std::cout << std::endl;
+
+  int exp = 1, pos = 2, extra = 0, bop = 0;
+  int logN = log(N);
+  std::cout << "log(" << N << ") = " <, logN << std::endl;
+  while (pos < N) {
+    std::cout << "IN WHILE" << std::endl;
+    for (unsigned int i = (pos - 1); i < N; i += (pos * exp)) {
+      // bop = pow( pos, (exp - 1)) - 1;
+
+      std::cout << "comparing " << vals[i - 1] << " and " << vals[ i] << std::endl;
+      if ( vals[i - 1] > vals[ i]) {
+	std::cout << "SWAPPING" << std::endl;
+	extra = vals[i - 1];
+	vals[i - 1] = vals[ i];
+	vals[ i] = extra;
+      }
+    }
+    pos = pos * 2;
+    std::cout << std::endl;
+  }
+  std::cout << "Largest Value = " << vals[N - 1] << std::endl;
+}
