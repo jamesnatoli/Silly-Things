@@ -8,7 +8,7 @@
 #include <iostream>
 #include <vector>
 
-#define SIZE 5
+#define SIZE 20
 
 // int bucket[SIZE];
 // std::vector<int> pail;
@@ -61,7 +61,7 @@ int main() {
   do {
     UniqueRandomArray( bucket1);
     iter++;
-    if ((iter % 100) == 0)
+    if ((iter % (100 * SIZE)) == 0)
       std::cout << iter << std::endl;
   }
   while( !isSorted( bucket1));
