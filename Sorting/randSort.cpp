@@ -8,7 +8,7 @@
 #include <iostream>
 #include <vector>
 
-#define SIZE 20
+#define SIZE 45
 
 // int bucket[SIZE];
 // std::vector<int> pail;
