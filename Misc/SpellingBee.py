@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # Better code to print possible words for the NYT Spelling Bee
 import re, os, sys
 from optparse import OptionParser
@@ -51,7 +52,10 @@ def main():
     print("    %s  "%(letters[3]))
 
     # Get words
-    myFile = open("words.txt")
+    try:
+        myFile = open("/Users/jamesnatoli/Documents/Programs/Silly-Things/Misc/words.txt", "r")
+    except:
+        print("Error opening file :(")
     possibleWords = []
     pangrams = []
     for line in myFile:
